@@ -87,7 +87,7 @@ std::function<double(double)> derivative(std::function<double(double)> f) {
 	return [f] (double x) -> double {
 		double h = 0.0001;
 		return (f(x+h)-f(x))/h;
-	}
+	};
 }
 ```
 
@@ -101,7 +101,7 @@ double f(double x) {
 auto df = derivative(f);
 
 double a = f(1); // a == 1
-double a = df(1); // a == 2
+double b = df(1); // b == 2
 ```
 
 А далее представлен код для вычисления первой и второй производных функций, взятый из [курсовой по УМФ](https://github.com/optozorax/labs_emf/blob/60b62fb5746aa83e3c52a802d5da1741950b6292/coursework/fem.cpp#L283), смело используйте его в своих проектах.
